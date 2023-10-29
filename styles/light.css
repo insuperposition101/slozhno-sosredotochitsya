@@ -5,22 +5,33 @@
 */
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --accent-color: #ff8dcb;
-    --main-text-color: #353430;
-    --background-color: #fff1f7;
+  .page {
+    --text-color: #353430;
+    --h-background-color: #ff8dcb;
+    --headings-on-bg-color: #353430;
+    --decor-button-headings-color: #353430;
+    --shadow-color: #ff0070;
     --title-color: #ffc2e6;
+    --background-color: #fff1f7;
     --hover-color: rgba(50, 49, 45, 0.4);
+    background-image: url(../images/cover-image-light.png);
+  }
+
+  .span-rec {
+    display: none;
   }
 }
 
 .page.theme_light {
-  --accent-color: #ff8dcb;
-  --main-text-color: #353430;
-  --background-color: #fff1f7;
+  --text-color: #353430;
+  --h-background-color: #ff8dcb;
+  --headings-on-bg-color: #353430;
+  --decor-button-headings-color: #353430;
+  --shadow-color: #ff0070;
   --title-color: #ffc2e6;
+  --background-color: #fff1f7;
   --hover-color: rgba(50, 49, 45, 0.4);
-  color: var(--main-text-color);
+  color: var(--text-color);
   background-color: var(--background-color);
   background-image: url(../images/cover-image-light.png);
   /* сохраните этот селектор в приведённом виде.
@@ -31,34 +42,4 @@
 
 .theme_light .span-rec {
   display: none;
-}
-
-.theme_light .decorated-zone::after {
-  border-block-end: 1px solid var(--main-text-color);
-  border-inline-start: 1px solid var(--main-text-color);
-}
-
-.theme_light .decorated-zone::before {
-  border-block-start: 1px solid var(--main-text-color);
-  border-inline-end: 1px solid var(--main-text-color);
-}
-
-.theme_light .title-decor {
-  color: var(--main-text-color);
-}
-
-.theme_light .header__theme-menu-button {
-  color: var(--main-text-color);
-}
-
-.theme_light .header__theme-menu-button_active {
-  outline: 1px solid var(--main-text-color);
-}
-
-.theme_light .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--main-text-color);
-}
-
-.theme_light .sections-heading {
-  color: var(--main-text-color);
 }

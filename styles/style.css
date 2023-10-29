@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  color: var(--main-text-color);
+  color: var(--text-color);
   background-color: var(--background-color);
   font-family: var(--font-family), sans-serif;
   font-size: var(--font-size);
@@ -18,7 +18,7 @@
   padding: var(--main-gap) 0;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  color: var(--accent-color);
+  color: var(--decor-button-headings-color);
   position: relative;
   height: 100vh;
   min-height: 668px;
@@ -26,11 +26,11 @@
 
 .span-rec::after {
   content: "";
-  background-color: var(--accent-color);
+  background-color: var(--decor-button-headings-color);
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  box-shadow: 0px 0px 8px var(--accent-color);
+  box-shadow: 0px 0px 8px var(--decor-button-headings-color);
   position: absolute;
   top: 5px;
   left: 40px;
@@ -48,8 +48,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  border-block-end: 1px solid var(--accent-color);
-  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--decor-button-headings-color);
+  border-inline-start: 1px solid var(--decor-button-headings-color);
   inset-inline-start: 0;
   inset-block-end: var(--main-gap);
 }
@@ -59,8 +59,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  border-block-start: 1px solid var(--accent-color);
-  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--decor-button-headings-color);
+  border-inline-end: 1px solid var(--decor-button-headings-color);
   inset-inline-end: 0;
   inset-block-start: var(--main-gap);
 }
@@ -78,7 +78,7 @@
 }
 
 .title:not(.footer-heading) {
-  text-shadow: 4px 4px 0px var(--accent-color);
+  text-shadow: 4px 4px 0px var(--shadow-color);
   margin-inline-start: -20px;
 }
 
@@ -91,18 +91,15 @@
 }
 
 .title-decor {
-  background-color: var(--accent-color);
-  color: var(--main-color);
+  background-color: var(--h-background-color);
+  color: var(--headings-on-bg-color);
   line-height: 23.4px;
   font-size: var(--font-size);
 }
 
-.title-decor:not(.title-span, .special-heading) {
-  margin-block-end: var(--little-gap);
-}
-
 .header__theme-menu-button {
   appearance: none;
+  cursor: pointer;
   border: none;
   background-color: transparent;
   text-transform: lowercase;
@@ -112,7 +109,7 @@
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--decor-button-headings-color);
   pointer-events: none;
 }
 
@@ -122,7 +119,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--decor-button-headings-color);
 }
 
 .header__theme-menu-button:hover {
@@ -150,24 +147,34 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--little-gap);
+}
+
 .link {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--shadow-color);
   text-decoration: none;
 }
 
 .link:hover {
-  border-block-end: 1px solid var(--main-text-color);
+  border-block-end: 1px solid var(--text-color);
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--main-text-color);
+  outline: 1px solid var(--text-color);
 }
 
 .sections-heading {
-  color: var(--accent-color);
+  color: var(--decor-button-headings-color);
   font-size: var(--font-size);
-  margin: 0 20px 20px 0;
+  margin-inline-end: var(--main-gap);
   max-width: 315px;
+}
+
+.heading-with-margin {
+  margin: 0 20px 20px 0;
 }
 
 .special-heading {
@@ -226,7 +233,7 @@
 }
 
 .footer-heading {
-  text-shadow: 2px 2px 0px var(--accent-color);
+  text-shadow: 2px 2px 0px var(--shadow-color);
 }
 
 /* далее медиазапросы */
@@ -306,16 +313,13 @@
     gap: 50px;
   }
 
-  .sections-heading {
-    width: 100%;
-  }
-
   .section-type-1 {
     grid-template-columns: 1fr;
   }
 
   .sections-heading {
-    max-width: 100%;
+    min-width: 100%;
+    margin-block-end: var(--main-gap);
   }
 
   .gallery-heading {
