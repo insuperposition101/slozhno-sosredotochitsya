@@ -10,26 +10,59 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  padding: var(--main-gap);
+  padding: 0 var(--main-gap);
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
+  padding: var(--main-gap) 0;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  gap: 114px;
   color: var(--accent-color);
   position: relative;
-  /* padding-block-end: 20px; */
-  height: calc(100vh - 40px);
+  height: 100vh;
   min-height: 668px;
 }
 
-.header::before {
+.span-rec::after {
   content: "";
-  background-image: url(/images/Ellipse.png);
-  background-position: center;
-  /* position: absolute; */
+  background-color: var(--accent-color);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px var(--accent-color);
+  position: absolute;
+  top: 5px;
+  left: 40px;
+}
+
+.span-rec {
+  text-transform: uppercase;
+  position: absolute;
+  right: 28px;
+  top: 21px;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  inset-inline-start: 0;
+  inset-block-end: var(--main-gap);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  inset-inline-end: 0;
+  inset-block-start: var(--main-gap);
 }
 
 .header__theme-menu-list {
@@ -38,18 +71,13 @@
   justify-content: center;
 }
 
-.header__theme-menu-item {
-  width: 70px;
-  height: 26px;
-}
-
 .title {
-  color: #db00ff;
+  color: var(--title-color);
   font-size: clamp(7.5rem, 0.5262rem + 14.5098vw, 9.8125rem);
   line-height: 82.5%;
 }
 
-.title:not(h2) {
+.title:not(.footer-heading) {
   text-shadow: 4px 4px 0px var(--accent-color);
   margin-inline-start: -20px;
 }
@@ -58,7 +86,7 @@
   max-width: 50%;
   min-width: 355px;
   justify-self: self-end;
-  align-self: self-start;
+  align-self: center;
   font-weight: bold;
 }
 
@@ -72,38 +100,6 @@
 .title-decor:not(.title-span, .special-heading) {
   margin-block-end: var(--little-gap);
 }
-
-.span-rec {
-  position: absolute;
-  right: 28px;
-  top: 1px;
-}
-
-.decorated-zone::after {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-block-end: 1px solid var(--accent-color);
-  border-inline-start: 1px solid var(--accent-color);
-  inset-inline-start: 0;
-  inset-block-end: 0;
-}
-
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-block-start: 1px solid var(--accent-color);
-  border-inline-end: 1px solid var(--accent-color);
-  inset-inline-end: 0;
-  inset-block-start: 0;
-}
-
-/* .header__theme-menu-item {
-  padding: 1.5px 0;
-} */
 
 .header__theme-menu-button {
   appearance: none;
@@ -130,18 +126,17 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4);
+  outline: 1px solid var(--hover-color);
 }
 
 .main {
   display: grid;
   gap: 80px;
-  margin: 80px 0;
+  margin: 60px 0;
   line-height: 23.4px;
 }
 
-.first-section,
-.third-section {
+.section-type-1 {
   display: grid;
   grid-template-columns: 34% 2fr;
 }
@@ -151,7 +146,7 @@
   gap: var(--main-gap);
 }
 
-.article-list-second {
+.article-list-type-2 {
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -194,23 +189,23 @@
     "tape street street";
 }
 
-.sunset {
+.img:nth-child(1) {
   grid-area: sunset;
 }
 
-.ice-cream {
+.img:nth-child(2) {
   grid-area: ice-cream;
 }
 
-.tape {
+.img:nth-child(3) {
   grid-area: tape;
 }
 
-.books {
+.img:nth-child(4) {
   grid-area: books;
 }
 
-.street {
+.img:nth-child(5) {
   grid-area: street;
 }
 
@@ -225,30 +220,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 40px);
+  height: 100vh;
+  min-height: 668px;
   position: relative;
-  /* padding-block-start: 20px; */
 }
 
-.h2 {
+.footer-heading {
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
 /* далее медиазапросы */
 
 @media (max-width: 830px) {
-  .header {
-    gap: 161px;
-  }
-
   .header__theme-menu-list {
     flex-direction: column;
     align-items: end;
   }
 
+  .header__theme-menu-item {
+    padding: 1.5px 0;
+  }
+
   .header__theme-menu {
-    padding-block-end: 10px;
-    align-self: self-end;
+    align-self: center;
   }
 
   .title {
@@ -256,45 +250,51 @@
   }
 
   .title-span {
-    align-self: self-start;
+    align-self: center;
   }
 
   .sections-heading {
     max-width: 236px;
   }
 
-  .first-section,
-  .third-section {
+  .section-type-1 {
     grid-template-columns: 35% 2fr;
   }
 
-  .article-list-second {
+  .article-list-type-2 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
   .page {
-    padding: var(--little-gap);
+    padding: 0 var(--little-gap);
+  }
+
+  .span-rec {
+    top: 11px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 0;
+    inset-block-end: var(--little-gap);
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 0;
+    inset-block-start: var(--little-gap);
   }
 
   .header {
-    height: calc(100vh - var(--main-gap));
-    gap: 54px;
-    min-height: 648px;
-  }
-
-  .header__theme-menu {
-    padding-block-end: var(--little-gap);
+    padding: var(--little-gap) 0;
   }
 
   .title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
-  .title:not(h2) {
+  .title:not(.footer-heading) {
     margin-inline-start: 0;
-    padding-block-start: 4px;
   }
 
   .title-span {
@@ -302,7 +302,7 @@
   }
 
   .main {
-    margin: 50px 0;
+    margin: 40px 0;
     gap: 50px;
   }
 
@@ -310,9 +310,7 @@
     width: 100%;
   }
 
-  .first-section,
-  .third-section {
-    display: grid;
+  .section-type-1 {
     grid-template-columns: 1fr;
   }
 
@@ -320,7 +318,7 @@
     max-width: 100%;
   }
 
-  .h3 {
+  .gallery-heading {
     margin-block-end: var(--little-gap);
   }
 
@@ -328,9 +326,5 @@
     display: flex;
     flex-direction: column;
     gap: var(--little-gap);
-  }
-
-  .footer {
-    height: calc(100vh - var(--main-gap));
   }
 }

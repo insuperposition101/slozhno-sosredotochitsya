@@ -7,9 +7,11 @@
   --accent-color: #ff0070;
   --main-color: #000028;
   --main-text-color: #F1B2CE;
+  --title-color: #db00ff;
   --background-color: #000028;
   --font-family: "IBM Plex Mono", sans-serif;
   --font-size: 18px;
   --main-gap: 20px;
   --little-gap: 10px;
+  --hover-color: rgba(255, 0, 112, 0.4);
 }
