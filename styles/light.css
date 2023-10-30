@@ -13,7 +13,8 @@
     --shadow-color: #ff0070;
     --title-color: #ffc2e6;
     --background-color: #fff1f7;
-    --hover-color: rgba(50, 49, 45, 0.4);
+    --hover-color: #32312d66;
+    --shadow-for-link: #ff8dcb;
     background-image: url(../images/cover-image-light.png);
   }
 
@@ -30,7 +31,8 @@
   --shadow-color: #ff0070;
   --title-color: #ffc2e6;
   --background-color: #fff1f7;
-  --hover-color: rgba(50, 49, 45, 0.4);
+  --hover-color: #32312d66;
+  --shadow-for-link: #ff8dcb;
   color: var(--text-color);
   background-color: var(--background-color);
   background-image: url(../images/cover-image-light.png);
