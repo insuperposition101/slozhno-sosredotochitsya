@@ -133,7 +133,7 @@
   line-height: 23.4px;
 }
 
-.section-type-1 {
+.section-type-main {
   display: grid;
   grid-template-columns: 34% 2fr;
 }
@@ -143,7 +143,7 @@
   gap: var(--main-gap);
 }
 
-.article-list-type-2 {
+.article-list-type-extra {
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -264,11 +264,11 @@
     max-width: 236px;
   }
 
-  .section-type-1 {
+  .section-type-main {
     grid-template-columns: 35% 2fr;
   }
 
-  .article-list-type-2 {
+  .article-list-type-extra {
     grid-template-columns: 1fr;
   }
 }
@@ -313,7 +313,7 @@
     gap: 50px;
   }
 
-  .section-type-1 {
+  .section-type-main {
     grid-template-columns: 1fr;
   }
 

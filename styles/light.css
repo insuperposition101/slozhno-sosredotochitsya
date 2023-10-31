@@ -5,7 +5,7 @@
 */
 
 @media (prefers-color-scheme: light) {
-  .page {
+  :root {
     --text-color: #353430;
     --h-background-color: #ff8dcb;
     --headings-on-bg-color: #353430;
@@ -15,6 +15,9 @@
     --background-color: #fff1f7;
     --hover-color: #32312d66;
     --shadow-for-link: #ff8dcb;
+  }
+
+  .page {
     background-image: url(../images/cover-image-light.png);
   }
 
